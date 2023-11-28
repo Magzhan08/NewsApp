@@ -1,13 +1,13 @@
 package com.loc.newsapp.domain.usecases
 
-import com.loc.newsapp.domain.manager.LocalUserManages
+import com.loc.newsapp.domain.manager.LocalUserManager
 
 class SaveAppEntry(
-    private val localUserManages: LocalUserManages
+    private val localUserManager: LocalUserManager
 ) {
 
     suspend operator fun invoke(){
-        localUserManages.saveAppEntry()
+        localUserManager.saveAppEntry()
     }
 
 }

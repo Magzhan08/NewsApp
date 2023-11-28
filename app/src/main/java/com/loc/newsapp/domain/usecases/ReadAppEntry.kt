@@ -1,14 +1,14 @@
 package com.loc.newsapp.domain.usecases
 
-import com.loc.newsapp.domain.manager.LocalUserManages
+import com.loc.newsapp.domain.manager.LocalUserManager
 import kotlinx.coroutines.flow.Flow
 
 class ReadAppEntry(
-    private val localUserManages: LocalUserManages
+    private val localUserManager: LocalUserManager
 ) {
 
     suspend operator fun invoke(): Flow<Boolean> {
-        return localUserManages.readAppEntry()
+        return localUserManager.readAppEntry()
     }
 
 }

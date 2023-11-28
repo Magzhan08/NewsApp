@@ -1,21 +1,20 @@
 package com.loc.newsapp.data.manager
 
 import android.content.Context
-import androidx.compose.ui.unit.Constraints
 import androidx.datastore.core.DataStore
 import androidx.datastore.preferences.core.Preferences
 import androidx.datastore.preferences.core.booleanPreferencesKey
 import androidx.datastore.preferences.core.edit
 import androidx.datastore.preferences.preferencesDataStore
-import com.loc.newsapp.domain.manager.LocalUserManages
+import com.loc.newsapp.domain.manager.LocalUserManager
 import com.loc.newsapp.utils.Constants
 import com.loc.newsapp.utils.Constants.USER_SETTINGS
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.map
 
-class LocalUserManagesImpl(
+class LocalUserManagerImpl(
     private val context: Context
-) : LocalUserManages {
+) : LocalUserManager {
     override suspend fun saveAppEntry() {
         context.dataStore.edit { settings ->
             settings[PreferencesKeys.APP_ENTRY] = true
